@@ -11,25 +11,25 @@ const notoSansMono = Noto_Sans_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "wmprawiro - ウェブデザイナー・開発者",
+  title: "wmprawiro - web designer & developer",
   description:
-    "ワヒュー・マウラナ・プラウィロのポートフォリオ - フィンテックとWeb3技術を専門とするウェブデザイナー兼開発者。",
+    "Portfolio of Wahyu Maulana Prawiro - Web Designer & Developer specializing in Fintech and Web3 technologies.",
   keywords: [
-    "ウェブデザイン",
-    "ウェブ開発",
+    "web design",
+    "web development",
     "UI/UX",
-    "フィンテック",
+    "Fintech",
     "Web3",
-    "ポートフォリオ",
+    "portfolio",
   ],
   authors: [{ name: "Wahyu Maulana Prawiro" }],
   creator: "Wahyu Maulana Prawiro",
   openGraph: {
-    title: "wmprawiro - ウェブデザイナー・開発者",
+    title: "wmprawiro - Web Designer & Developer",
     description:
-      "ワヒュー・マウラナ・プラウィロのポートフォリオ - フィンテックとWeb3技術を専門とするウェブデザイナー兼開発者。",
+      "Portfolio of Wahyu Maulana Prawiro - Web Designer & Developer specializing in Fintech and Web3 technologies.",
     type: "website",
-    locale: "ja_JP",
+    locale: "en_US",
   },
 };
 
@@ -39,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className="dark">
+    <html lang="en" className="dark">
       <body
         className={`${notoSansMono.variable} antialiased bg-black text-white min-h-screen`}
       >
