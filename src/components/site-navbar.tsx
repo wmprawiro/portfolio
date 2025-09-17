@@ -12,7 +12,7 @@ export function SiteNavbar() {
       <div className="flex items-center justify-between py-2 px-6 xl:mx-auto xl:max-w-[1152px] xl:px-14 2xl:mx-96 2xl:px-14">
         {/* Logo */}
         <Link
-          href="/"
+          href="/#"
           className="font-noto-sans-mono font-normal text-white hover:opacity-80 transition-opacity"
           title="Home - wmprawiro portfolio"
           style={{ fontSize: "20px" }}
@@ -23,7 +23,7 @@ export function SiteNavbar() {
         {/* Navigation Actions */}
         <div className="flex items-center gap-3">
           <Link
-            href="/cv.pdf"
+            href="/"
             download
             title="Download CV"
             className="flex items-center gap-2 font-noto-sans-mono text-xs text-neutral-500 hover:text-white transition-colors"
@@ -33,7 +33,7 @@ export function SiteNavbar() {
           </Link>
 
           <a
-            href="mailto:wahyu@wmprawiro.com"
+            href="mailto:hello@wmprawiro.dev"
             title="Send email"
             className="flex items-center gap-2 font-noto-sans-mono text-xs text-neutral-500 hover:text-white transition-colors"
           >

@@ -8,17 +8,15 @@ const notoSansMono = Noto_Sans_Mono({
   subsets: ["latin"],
 });
 
-// Helvetica will be used via CSS as it's a system font
-
 export const metadata: Metadata = {
-  title: "wmprawiro - Web Designer & Developer",
+  title: "wmprawiro - web designer & developer",
   description:
-    "Portfolio of Wahyu Maulana Prawiro - Web Designer & Developer specializing in finance and Web3 technologies.",
+    "Portfolio of Wahyu Maulana Prawiro - Web Designer & Developer specializing in Fintech and Web3 technologies.",
   keywords: [
     "web design",
     "web development",
     "UI/UX",
-    "finance",
+    "Fintech",
     "Web3",
     "portfolio",
   ],
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "wmprawiro - Web Designer & Developer",
     description:
-      "Portfolio of Wahyu Maulana Prawiro - Web Designer & Developer specializing in finance and Web3 technologies.",
+      "Portfolio of Wahyu Maulana Prawiro - Web Designer & Developer specializing in Fintech and Web3 technologies.",
     type: "website",
     locale: "en_US",
   },

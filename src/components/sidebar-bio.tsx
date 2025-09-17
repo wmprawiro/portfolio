@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Twitter, Linkedin, Github, Figma } from "lucide-react";
 
 const socialLinks = [
@@ -31,8 +32,16 @@ export function SidebarBio() {
       aria-label="About and social links"
     >
       <div className="space-y-6">
-        {/* Name and Title */}
+        {/* Profile Image and Name */}
         <div className="space-y-4">
+          <div className="w-24 h-24 relative">
+            <Image
+              src="/default.jpg"
+              alt="Wahyu Maulana Prawiro"
+              fill
+              className="object-cover object-top"
+            />
+          </div>
           <h1 className="font-helvetica text-3xl text-white">
             Wahyu Maulana Prawiro
           </h1>
