@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_Mono } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { SiteNavbar } from "@/components/site-navbar";
 
@@ -43,6 +44,7 @@ export default function RootLayout({
       >
         <SiteNavbar />
         <main className="pt-11.5">{children}</main>
+        <SpeedInsights />
       </body>
     </html>
   );
