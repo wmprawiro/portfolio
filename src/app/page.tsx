@@ -18,7 +18,7 @@ export default function Home() {
                 id="recent-heading"
                 className="font-helvetica text-xl uppercase tracking-wider text-white mb-6"
               >
-                Recent
+                最新作品
               </h2>
             </div>
 
@@ -33,7 +33,7 @@ export default function Home() {
           {/* Load More Indicator */}
           <div className="p-6 lg:p-8">
             <p className="font-noto-sans-mono text-xs text-neutral-600 text-center">
-              More projects coming soon...
+              より多くのプロジェクトを準備中...
             </p>
           </div>
         </div>

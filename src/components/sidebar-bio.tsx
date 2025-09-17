@@ -29,7 +29,7 @@ export function SidebarBio() {
   return (
     <aside
       className="lg:sticky lg:top-0 lg:h-screen w-full lg:max-w-[340px] p-6 lg:pl-14 border-b lg:border-b-0 lg:border-r border-neutral-800"
-      aria-label="About and social links"
+      aria-label="プロフィールとソーシャルリンク"
     >
       <div className="space-y-6">
         {/* Profile Image and Name */}
@@ -47,9 +47,7 @@ export function SidebarBio() {
           </h1>
 
           <p className="text-neutral-400 text-xs leading-relaxed font-noto-sans-mono">
-            Web Designer & Developer with deep interest in fintech and web3
-            technologies. I create digital experiences that bridge traditional
-            design with emerging tech.
+            フィンテックとWeb3技術に深い関心を持つWebデザイナー兼開発者。従来のデザインと新興技術を融合したデジタル体験を創造しています。
           </p>
         </div>
 
@@ -65,7 +63,7 @@ export function SidebarBio() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 font-noto-sans-mono text-neutral-500 hover:text-white transition-colors group"
-                  title={`Visit my ${link.name} profile`}
+                  title={`私の${link.name}プロフィールを見る`}
                   style={{ fontSize: "12px" }}
                 >
                   <IconComponent className="w-3 h-3" />

@@ -65,10 +65,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
           <Link
             href={project.link}
-            title={`View ${project.title} details`}
+            title={`${project.title}の詳細を見る`}
             className="flex items-center gap-2 font-noto-sans-mono text-neutral-500 hover:text-white transition-colors text-xs"
           >
-            READ MORE
+            詳細を見る
             <SquareArrowOutUpRight className="w-3 h-3" />
           </Link>
         </div>
