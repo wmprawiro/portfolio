@@ -1,0 +1,9 @@
+# CV Placeholder
+
+To add your CV:
+
+1. Create a PDF file named `cv.pdf`
+2. Place it in the `public/` folder
+3. The download link in the navbar will automatically work
+
+Current file: This is just a placeholder text file. Replace it with your actual CV PDF.
