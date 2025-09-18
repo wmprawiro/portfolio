@@ -3,7 +3,7 @@ import { Noto_Sans_Mono } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
-import { SiteNavbar } from "@/components/site-navbar";
+import { DisableContextMenu } from "@/components/disable-context-menu";
 
 const notoSansMono = Noto_Sans_Mono({
   variable: "--font-noto-sans-mono",
@@ -43,8 +43,8 @@ export default function RootLayout({
       <body
         className={`${notoSansMono.variable} antialiased bg-black text-white min-h-screen`}
       >
-        <SiteNavbar />
-        <main>{children}</main>
+        <DisableContextMenu />
+        {children}
         <SpeedInsights />
         <Analytics />
       </body>

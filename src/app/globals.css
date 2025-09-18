@@ -28,17 +28,3 @@ body {
 *::-webkit-scrollbar {
   display: none;
 }
-
-@media (max-width: 1023px) {
-  html,
-  body {
-    overflow: auto;
-  }
-}
-
-@media (min-width: 1024px) {
-  html,
-  body {
-    overflow: hidden;
-  }
-}

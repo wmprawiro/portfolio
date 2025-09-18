@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Download, Mail } from "lucide-react";
+import { TYPOGRAPHY } from "@/lib/design-system";
 
 export function SiteNavbar() {
   return (
@@ -23,7 +24,7 @@ export function SiteNavbar() {
             href="/"
             download
             title="Download CV"
-            className="flex items-center gap-2 font-noto-sans-mono text-xs text-neutral-500 hover:text-white transition-colors"
+            className={`flex items-center gap-2 ${TYPOGRAPHY.monoSmallMuted}`}
           >
             DOWNLOAD CV
             <Download className="w-3 h-3" />
@@ -32,7 +33,7 @@ export function SiteNavbar() {
           <a
             href="mailto:hello@wmprawiro.dev"
             title="Send email"
-            className="flex items-center gap-2 font-noto-sans-mono text-xs text-neutral-500 hover:text-white transition-colors"
+            className={`flex items-center gap-2 ${TYPOGRAPHY.monoSmallMuted}`}
           >
             EMAIL
             <Mail className="w-3 h-3" />

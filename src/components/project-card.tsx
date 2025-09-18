@@ -4,7 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { SquareArrowOutUpRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { ProjectTags } from "@/components/project-tags";
 import { Project } from "@/lib/projects";
+import {
+  handleImageError,
+  projectImageFallbackClasses,
+} from "@/lib/image-utils";
+import { IMAGE_HEIGHTS, TYPOGRAPHY, TRANSITIONS } from "@/lib/design-system";
 
 interface ProjectCardProps {
   project: Project;
@@ -12,52 +18,43 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Card className="bg-black border-neutral-800 hover:border-neutral-700 transition-colors group rounded-none">
+    <Card
+      className={`bg-black border-neutral-800 hover:border-neutral-700 ${TRANSITIONS.colorsGroup} rounded-none`}
+    >
       <CardContent className="p-0">
         <div className="pb-4">
-          <h3 className="font-noto-sans-mono text-xs uppercase tracking-wider text-neutral-500">
+          <h3
+            className={`${TYPOGRAPHY.monoSmall} uppercase tracking-wider text-neutral-500`}
+          >
             {project.title}
           </h3>
         </div>
 
-        <div className="relative h-[356px] bg-black overflow-hidden rounded-none">
+        <div
+          className={`relative ${IMAGE_HEIGHTS.card} bg-black overflow-hidden rounded-none`}
+        >
           <Image
             src={project.image}
             alt={`${project.title} thumbnail`}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.style.display = "none";
-            }}
+            className={`object-cover group-hover:scale-105 ${TRANSITIONS.transform}`}
+            onError={handleImageError}
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-neutral-800 to-neutral-900 flex items-center justify-center">
-            <span className="font-noto-sans-mono text-xs text-neutral-600 uppercase tracking-wider">
+          <div className={projectImageFallbackClasses}>
+            <span
+              className={`${TYPOGRAPHY.monoSmall} text-neutral-600 uppercase tracking-wider`}
+            >
               {project.title}
             </span>
           </div>
         </div>
 
         <div className="flex items-center justify-between pt-4">
-          <div className="flex gap-2">
-            {project.tags.map((tag) => (
-              <div
-                key={tag}
-                className="flex items-center gap-1 font-noto-sans-mono text-xs text-white px-2 py-1"
-              >
-                <div
-                  className={`w-3 h-3 ${
-                    tag === "coding" ? "bg-red-500" : "bg-violet-500"
-                  }`}
-                />
-                <span>{tag.toUpperCase()}</span>
-              </div>
-            ))}
-          </div>
+          <ProjectTags tags={project.tags} />
           <Link
             href={project.link}
             title={`View ${project.title} details`}
-            className="flex items-center gap-2 font-noto-sans-mono text-neutral-500 hover:text-white transition-colors text-xs"
+            className={`flex items-center gap-2 ${TYPOGRAPHY.monoSmallMuted}`}
           >
             READ MORE
             <SquareArrowOutUpRight className="w-3 h-3" />

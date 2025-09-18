@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Twitter, Linkedin, Github, Figma } from "lucide-react";
+import { TYPOGRAPHY, TRANSITIONS } from "@/lib/design-system";
 
 const socialLinks = [
   { name: "TWITTER/X", href: "https://twitter.com/wmprawiro", icon: Twitter },
@@ -29,10 +30,10 @@ export function SidebarBio() {
               className="object-cover object-top"
             />
           </div>
-          <h1 className="font-helvetica text-3xl text-white">
+          <h1 className={`${TYPOGRAPHY.heading} text-white`}>
             Wahyu Maulana Prawiro
           </h1>
-          <p className="text-neutral-400 text-xs leading-relaxed font-noto-sans-mono">
+          <p className={`text-neutral-400 ${TYPOGRAPHY.body} leading-relaxed`}>
             Web Designer & Developer with deep interest in fintech and web3
             technologies. I create digital experiences that bridge traditional
             design with emerging tech.
@@ -46,7 +47,7 @@ export function SidebarBio() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 font-noto-sans-mono text-xs text-neutral-500 hover:text-white transition-colors"
+              className={`flex items-center gap-3 ${TYPOGRAPHY.monoSmall} text-neutral-500 hover:text-white ${TRANSITIONS.colors}`}
               title={`Visit my ${link.name} profile`}
             >
               <link.icon className="w-3 h-3" />
