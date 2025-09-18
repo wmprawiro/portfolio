@@ -44,7 +44,7 @@ export default function RootLayout({
         className={`${notoSansMono.variable} antialiased bg-black text-white min-h-screen`}
       >
         <SiteNavbar />
-        <main className="pt-11.5">{children}</main>
+        <main>{children}</main>
         <SpeedInsights />
         <Analytics />
       </body>

@@ -4,7 +4,7 @@ import { projects } from "@/lib/projects";
 
 export default function Home() {
   return (
-    <div className="xl:mx-auto xl:max-w-[1152px] 2xl:mx-96">
+    <div className="xl:mx-auto xl:max-w-[1152px] 2xl:mx-96 pt-11.5">
       <div className="flex flex-col lg:flex-row h-screen lg:h-screen">
         <SidebarBio />
         <div className="flex-1 w-full lg:overflow-y-auto">
