@@ -34,6 +34,9 @@ export function SidebarBio() {
             Wahyu Maulana Prawiro
           </h1>
           <p className={`text-neutral-400 ${TYPOGRAPHY.body} leading-relaxed`}>
+            Collaboration: hello@wmprawiro.com
+          </p>
+          <p className={`text-neutral-400 ${TYPOGRAPHY.body} leading-relaxed`}>
             Web Designer & Developer with deep interest in fintech and web3
             technologies. I create digital experiences that bridge traditional
             design with emerging tech.
