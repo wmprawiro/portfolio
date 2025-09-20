@@ -33,8 +33,10 @@ export function SidebarBio() {
           <h1 className={`${TYPOGRAPHY.heading} text-white`}>
             Wahyu Maulana Prawiro
           </h1>
-          <p className={`text-neutral-400 ${TYPOGRAPHY.body} leading-relaxed`}>
-            Collaboration: hello@wmprawiro.com
+          <p
+            className={`text-neutral-400 ${TYPOGRAPHY.monoSmall} leading-relaxed`}
+          >
+            COLLABORATION: hello@wmprawiro.dev
           </p>
           <p className={`text-neutral-400 ${TYPOGRAPHY.body} leading-relaxed`}>
             Web Designer & Developer with deep interest in fintech and web3
