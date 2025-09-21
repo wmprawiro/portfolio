@@ -1,7 +1,50 @@
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Twitter, Linkedin, Github, Figma } from "lucide-react";
+import {
+  Twitter,
+  Linkedin,
+  Github,
+  Figma,
+  Copy,
+  CopyCheck,
+} from "lucide-react";
 import { TYPOGRAPHY, TRANSITIONS } from "@/lib/design-system";
+function CopyEmail() {
+  const [copied, setCopied] = useState(false);
+  return (
+    <div className="flex items-center">
+      <span
+        className={`${TYPOGRAPHY.monoSmall} text-neutral-500 leading-relaxed pr-2`}
+      >
+        HELLO@WMPRAWIRO.DEV
+      </span>
+      <button
+        type="button"
+        className="text-neutral-500 hover:text-white transition-colors"
+        style={{
+          background: "none",
+          border: "none",
+          padding: 0,
+          cursor: "pointer",
+        }}
+        onClick={() => {
+          navigator.clipboard.writeText("hello@wmprawiro.dev");
+          setCopied(true);
+          setTimeout(() => setCopied(false), 1500);
+        }}
+        aria-label="Copy email to clipboard"
+      >
+        {copied ? (
+          <CopyCheck className="w-4 h-4" />
+        ) : (
+          <Copy className="w-4 h-4" />
+        )}
+      </button>
+    </div>
+  );
+}
 
 const socialLinks = [
   { name: "TWITTER/X", href: "https://twitter.com/wmprawiro", icon: Twitter },
@@ -33,11 +76,7 @@ export function SidebarBio() {
           <h1 className={`${TYPOGRAPHY.heading} text-white`}>
             Wahyu Maulana Prawiro
           </h1>
-          <p
-            className={`text-neutral-400 ${TYPOGRAPHY.monoSmall} leading-relaxed`}
-          >
-            COLLABORATION: hello@wmprawiro.dev
-          </p>
+          <CopyEmail />
           <p className={`text-neutral-400 ${TYPOGRAPHY.body} leading-relaxed`}>
             Web Designer & Developer with deep interest in fintech and web3
             technologies. I create digital experiences that bridge traditional
