@@ -19,13 +19,15 @@ export function ProjectDetailImage({
   title,
 }: ProjectDetailImageProps) {
   return (
-    <div className="relative w-full h-[356px] lg:h-[712px] bg-black overflow-hidden">
+    <div className="relative w-full aspect-square bg-black overflow-hidden">
       <Image
         src={src}
         alt={alt}
         fill
+        sizes="(max-width: 768px) 100vw, 50vw"
         className="object-cover"
         onError={handleImageError}
+        priority
       />
       <div className={projectImageFallbackClasses}>
         <span
