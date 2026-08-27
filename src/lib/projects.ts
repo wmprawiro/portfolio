@@ -11,8 +11,9 @@ export interface Project {
   techStack?: string[];
   infrastructure?: string[];
   integrations?: string[];
-  goals?: string;
+  goals?: string[];
   liveUrl?: string;
+  images?: string[];
 }
 
 export const projects: Project[] = [
@@ -35,9 +36,13 @@ export const projects: Project[] = [
       "Digiflazz API (Digital Product Fulfillment)",
       "Duitku API (Automated Payment Gateway)",
     ],
-    goals:
+    goals: [
       "The primary objective was to engineer a fully automated digital goods ecosystem that operates with zero manual intervention. By isolating the infrastructure configuration and leveraging reliable third-party APIs, the platform achieves high-speed, secure transaction processing at scale.",
+      "Minimize manual errors in order processing.",
+      "Expand payment options and support dynamic discounting."
+    ],
     liveUrl: "https://ugame.id",
+    images: ["ugame-user-flow.jpg", "ugame-dashboard-ui.jpg"]
   },
   {
     id: "2",
@@ -57,8 +62,25 @@ export const projects: Project[] = [
       "AstraPay API (Payment Link Generation)",
       "WhatsApp Business API",
     ],
-    goals:
-      "The primary objective was to accelerate the checkout process for social media merchants. By integrating AstraPay directly into the WhatsApp environment, the solution minimizes payment friction, enhances transaction security, and provides a streamlined conversational checkout experience for both sellers and buyers.",
+    goals: [
+      "The primary objective was to accelerate the checkout process for social media merchants. By integrating AstraPay directly into the WhatsApp environment, the solution minimizes payment friction, enhances transaction security, and provides a streamlined conversational checkout experience for both sellers and buyers."
+    ],
     liveUrl: "https://github.com/wmprawiro/astrapay-hackathon-2026/tree/main/frontend",
   },
+  {
+    id: "3",
+    title: "Fee Management System",
+    slug: "fee-management-system",
+    tags: ["design"],
+    image: "",
+    link: "/detail/fee-management-system",
+    description: "An internal enterprise dashboard designed for PT Finnet Indonesia to configure and manage complex B2B transaction fees.",
+    problem: "Previously, any changes to partner fee structures required the Finnet team to directly manipulate the database. This lack of a dedicated interface was highly risky, prone to manual data-entry errors, and made the database vulnerable. Additionally, there was a constant friction in aligning business stakeholder expectations with the engineering team's output.",
+    impact: "Provided a sterile, user-friendly interface that completely eliminated the need for business teams to access the database directly. Significantly improved cross-functional communication by assisting the PM in translating stakeholder requirements into clear, testable UI/UX flows.",
+    techStack: ["Figma", "UI/UX Design", "Wireframing"],
+    goals: [
+      "Design an intuitive interface for configuring transaction fees to keep the database sterile and secure.",
+      "Bridge the communication gap between Product Managers, stakeholders, and the engineering team."
+    ]
+  }
 ];

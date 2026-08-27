@@ -10,23 +10,22 @@ const notoSansMono = Noto_Sans_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "wmprawiro - web designer & developer",
+  title: "wmprawiro - Product Designer",
   description:
-    "Portfolio of Wahyu Maulana Prawiro - Web Designer & Developer specializing in Fintech and Web3 technologies.",
+    "Portfolio of Wahyu Maulana Prawiro, a Product Designer with strong experience in building complex Fintech ecosystems.",
   keywords: [
-    "web design",
-    "web development",
+    "Product Designer",
     "UI/UX",
     "Fintech",
-    "Web3",
-    "portfolio",
+    "Design System",
+    "Portfolio",
   ],
   authors: [{ name: "Wahyu Maulana Prawiro" }],
   creator: "Wahyu Maulana Prawiro",
   openGraph: {
-    title: "wmprawiro - Web Designer & Developer",
+    title: "wmprawiro - Product Designer",
     description:
-      "Portfolio of Wahyu Maulana Prawiro - Web Designer & Developer specializing in Fintech and Web3 technologies.",
+      "Portfolio of Wahyu Maulana Prawiro, a Product Designer with strong experience in building complex Fintech ecosystems.",
     type: "website",
     locale: "en_US",
   },
