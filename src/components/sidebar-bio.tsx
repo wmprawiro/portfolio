@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {
   Twitter,
   Linkedin,
@@ -18,7 +17,7 @@ function CopyEmail() {
       <span
         className={`${TYPOGRAPHY.monoSmall} text-neutral-500 leading-relaxed pr-2`}
       >
-        HELLO@WMPRAWIRO.DEV
+        HI@WMPRAWIRO.DEV
       </span>
       <button
         type="button"
@@ -30,7 +29,7 @@ function CopyEmail() {
           cursor: "pointer",
         }}
         onClick={() => {
-          navigator.clipboard.writeText("hello@wmprawiro.dev");
+          navigator.clipboard.writeText("hi@wmprawiro.dev");
           setCopied(true);
           setTimeout(() => setCopied(false), 1500);
         }}
@@ -60,27 +59,17 @@ const socialLinks = [
 export function SidebarBio() {
   return (
     <aside
-      className="lg:sticky lg:top-0 lg:h-full w-full lg:max-w-[340px] p-6 lg:pl-14 border-b lg:border-b-0 lg:border-r border-neutral-800 lg:overflow-hidden"
+      className="lg:sticky lg:top-0 lg:h-full w-full lg:max-w-[340px] p-6 lg:p-10 border-b lg:border-b-0 lg:border-r border-neutral-800 lg:overflow-y-auto"
       aria-label="About and social links"
     >
       <div className="space-y-6">
         <div className="space-y-4">
-          <div className="w-24 h-24 relative">
-            <Image
-              src="/default.jpg"
-              alt="Wahyu Maulana Prawiro"
-              fill
-              className="object-cover object-top"
-            />
-          </div>
           <h1 className={`${TYPOGRAPHY.heading} text-white`}>
             Wahyu Maulana Prawiro
           </h1>
           <CopyEmail />
           <p className={`text-neutral-400 ${TYPOGRAPHY.body} leading-relaxed`}>
-            Web Designer & Developer with deep interest in fintech and web3
-            technologies. I create digital experiences that bridge traditional
-            design with emerging tech.
+            Product Designer specializing in system analysis, end-to-end SDLC, and scalable architectures. I translate complex business needs into high-quality user experiences, with strong experience in the fintech sector.
           </p>
         </div>
 

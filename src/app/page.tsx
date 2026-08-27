@@ -2,36 +2,92 @@ import { SidebarBio } from "@/components/sidebar-bio";
 import { ProjectCard } from "@/components/project-card";
 import { SiteNavbar } from "@/components/site-navbar";
 import { projects } from "@/lib/projects";
+import { articles } from "@/lib/articles";
 import { TYPOGRAPHY } from "@/lib/design-system";
+import Link from "next/link";
+import { SquareArrowOutUpRight } from "lucide-react";
 
 export default function Home() {
   return (
     <div>
       <SiteNavbar />
-      <main className="xl:mx-auto xl:max-w-[1152px] 2xl:mx-96 pt-11.5">
-        <div className="flex flex-col lg:flex-row h-[calc(100vh-46px)]">
+      <main className="max-w-[1152px] mx-auto pt-[53px]">
+        <div className="flex flex-col lg:flex-row h-[calc(100vh-53px)]">
           <SidebarBio />
           <div className="flex-1 w-full lg:overflow-y-auto lg:h-full">
-            <section className="p-6 lg:p-8" aria-labelledby="recent-heading">
+            <section className="p-6 lg:p-10" aria-labelledby="recent-heading">
               <h2
                 id="recent-heading"
                 className={`${TYPOGRAPHY.subheading} uppercase tracking-wider text-white mb-6`}
               >
-                Recent
+                Latest Project
               </h2>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+              <div className="flex flex-col gap-2">
                 {projects.map((project) => (
                   <ProjectCard key={project.id} project={project} />
                 ))}
               </div>
             </section>
-            <div className="p-6 lg:p-8 pb-20">
-              <p
-                className={`${TYPOGRAPHY.monoSmall} text-neutral-600 text-center`}
+
+            <section className="p-6 lg:p-10 border-t border-neutral-900" aria-labelledby="articles-heading">
+              <h2
+                id="articles-heading"
+                className={`${TYPOGRAPHY.subheading} uppercase tracking-wider text-white mb-6`}
               >
-                More projects coming soon...
-              </p>
-            </div>
+                Articles
+              </h2>
+              <div className="flex flex-col gap-2">
+                {articles.map((article) => (
+                  <div key={article.id} className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 pl-0 pr-0 group hover:bg-neutral-900/30 transition-colors">
+                    <div className="flex flex-col gap-1">
+                      <h3 className={`${TYPOGRAPHY.monoSmall} text-white uppercase tracking-wider group-hover:text-neutral-300 transition-colors`}>
+                        {article.title}
+                      </h3>
+                      <span className={`${TYPOGRAPHY.monoSmallMuted} text-neutral-500`}>
+                        {article.date}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center justify-between sm:justify-end gap-6 mt-2 sm:mt-0">
+                      <Link
+                        href={`/article/${article.slug}`}
+                        title={`Read ${article.title}`}
+                        className={`flex items-center gap-2 ${TYPOGRAPHY.monoSmallMuted} hover:text-white transition-colors`}
+                      >
+                        READ MORE
+                        <SquareArrowOutUpRight className="w-3 h-3" />
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="p-6 lg:p-10 border-t border-neutral-900" aria-labelledby="experience-heading">
+              <h2
+                id="experience-heading"
+                className={`${TYPOGRAPHY.subheading} uppercase tracking-wider text-white mb-6`}
+              >
+                Experience
+              </h2>
+              <div className="flex flex-col gap-8">
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-2">
+                  <div>
+                    <h3 className={`${TYPOGRAPHY.monoSmall} text-white uppercase tracking-wider`}>Engineer On-Site</h3>
+                    <p className={`text-neutral-400 ${TYPOGRAPHY.monoSmallMuted} mt-1`}>PT Finnet Indonesia (Telkom Group)</p>
+                  </div>
+                  <span className={`${TYPOGRAPHY.monoSmall} text-neutral-500 uppercase tracking-wider shrink-0`}>Nov 2025 — Present</span>
+                </div>
+
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-2">
+                  <div>
+                    <h3 className={`${TYPOGRAPHY.monoSmall} text-white uppercase tracking-wider`}>Freelance Product Specialist</h3>
+                    <p className={`text-neutral-400 ${TYPOGRAPHY.monoSmallMuted} mt-1`}>PT Finnet Indonesia (Telkom Group)</p>
+                  </div>
+                  <span className={`${TYPOGRAPHY.monoSmall} text-neutral-500 uppercase tracking-wider shrink-0`}>Jan 2024 — Nov 2025</span>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
       </main>
