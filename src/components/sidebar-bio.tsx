@@ -10,6 +10,7 @@ import {
   CopyCheck,
 } from "lucide-react";
 import { TYPOGRAPHY, TRANSITIONS } from "@/lib/design-system";
+
 function CopyEmail() {
   const [copied, setCopied] = useState(false);
   return (
@@ -21,24 +22,18 @@ function CopyEmail() {
       </span>
       <button
         type="button"
-        className="text-neutral-500 hover:text-white transition-colors"
-        style={{
-          background: "none",
-          border: "none",
-          padding: 0,
-          cursor: "pointer",
-        }}
+        className="bg-transparent border-none p-0 cursor-pointer text-neutral-500 hover:text-white transition-colors"
         onClick={() => {
           navigator.clipboard.writeText("hi@wmprawiro.dev");
           setCopied(true);
           setTimeout(() => setCopied(false), 1500);
         }}
-        aria-label="Copy email to clipboard"
+        aria-label="Copy email address to clipboard"
       >
         {copied ? (
-          <CopyCheck className="w-4 h-4" />
+          <CopyCheck className="w-4 h-4" aria-hidden="true" />
         ) : (
-          <Copy className="w-4 h-4" />
+          <Copy className="w-4 h-4" aria-hidden="true" />
         )}
       </button>
     </div>
@@ -46,14 +41,15 @@ function CopyEmail() {
 }
 
 const socialLinks = [
-  { name: "TWITTER/X", href: "https://twitter.com/wmprawiro", icon: Twitter },
+  { name: "TWITTER/X", href: "https://twitter.com/wmprawiro", icon: Twitter, label: "Visit my Twitter/X profile" },
   {
     name: "LINKEDIN",
     href: "https://linkedin.com/in/wmprawiro",
     icon: Linkedin,
+    label: "Visit my LinkedIn profile",
   },
-  { name: "GITHUB", href: "https://github.com/wmprawiro", icon: Github },
-  { name: "FIGMA", href: "https://figma.com/@wmprawiro", icon: Figma },
+  { name: "GITHUB", href: "https://github.com/wmprawiro", icon: Github, label: "Visit my GitHub profile" },
+  { name: "FIGMA", href: "https://figma.com/@wmprawiro", icon: Figma, label: "Visit my Figma profile" },
 ];
 
 export function SidebarBio() {
@@ -81,9 +77,9 @@ export function SidebarBio() {
               target="_blank"
               rel="noopener noreferrer"
               className={`flex items-center gap-3 ${TYPOGRAPHY.monoSmall} text-neutral-500 hover:text-white ${TRANSITIONS.colors}`}
-              title={`Visit my ${link.name} profile`}
+              aria-label={`${link.label} (opens in new tab)`}
             >
-              <link.icon className="w-3 h-3" />
+              <link.icon className="w-3 h-3" aria-hidden="true" />
               <span>{link.name}</span>
             </Link>
           ))}

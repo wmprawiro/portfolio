@@ -1,6 +1,6 @@
 // Common Layout Constants
 export const LAYOUT_CONSTRAINTS = {
-  maxWidth: "xl:mx-auto xl:max-w-[1152px] 2xl:mx-96",
+  maxWidth: "mx-auto max-w-[1152px]",
   sidebarWidth: "lg:max-w-[340px]",
   mainContentWidth: "lg:max-w-[calc(100%-340px)]",
 } as const;

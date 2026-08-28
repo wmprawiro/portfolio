@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div>
       <SiteNavbar />
-      <main className="max-w-[1152px] mx-auto pt-[53px]">
+      <main id="main-content" className="max-w-[1152px] mx-auto pt-[53px]">
         <div className="flex flex-col lg:flex-row h-[calc(100vh-53px)]">
           <SidebarBio />
           <div className="flex-1 w-full lg:overflow-y-auto lg:h-full">
@@ -43,19 +43,22 @@ export default function Home() {
                       <h3 className={`${TYPOGRAPHY.monoSmall} text-white uppercase tracking-wider group-hover:text-neutral-300 transition-colors`}>
                         {article.title}
                       </h3>
-                      <span className={`${TYPOGRAPHY.monoSmallMuted} text-neutral-500`}>
+                      <time
+                        dateTime={article.isoDate}
+                        className={`${TYPOGRAPHY.monoSmall} text-neutral-500`}
+                      >
                         {article.date}
-                      </span>
+                      </time>
                     </div>
 
                     <div className="flex items-center justify-between sm:justify-end gap-6 mt-2 sm:mt-0">
                       <Link
                         href={`/article/${article.slug}`}
-                        title={`Read ${article.title}`}
+                        aria-label={`Read article: ${article.title}`}
                         className={`flex items-center gap-2 ${TYPOGRAPHY.monoSmallMuted} hover:text-white transition-colors`}
                       >
                         READ MORE
-                        <SquareArrowOutUpRight className="w-3 h-3" />
+                        <SquareArrowOutUpRight className="w-3 h-3" aria-hidden="true" />
                       </Link>
                     </div>
                   </div>
@@ -76,7 +79,12 @@ export default function Home() {
                     <h3 className={`${TYPOGRAPHY.monoSmall} text-white uppercase tracking-wider`}>Engineer On-Site</h3>
                     <p className={`text-neutral-400 ${TYPOGRAPHY.monoSmallMuted} mt-1`}>PT Finnet Indonesia (Telkom Group)</p>
                   </div>
-                  <span className={`${TYPOGRAPHY.monoSmall} text-neutral-500 uppercase tracking-wider shrink-0`}>Nov 2025 — Present</span>
+                  <time
+                    dateTime="2025-11"
+                    className={`${TYPOGRAPHY.monoSmall} text-neutral-500 uppercase tracking-wider shrink-0`}
+                  >
+                    Nov 2025 — Present
+                  </time>
                 </div>
 
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-2">
@@ -84,7 +92,12 @@ export default function Home() {
                     <h3 className={`${TYPOGRAPHY.monoSmall} text-white uppercase tracking-wider`}>Freelance Product Specialist</h3>
                     <p className={`text-neutral-400 ${TYPOGRAPHY.monoSmallMuted} mt-1`}>PT Finnet Indonesia (Telkom Group)</p>
                   </div>
-                  <span className={`${TYPOGRAPHY.monoSmall} text-neutral-500 uppercase tracking-wider shrink-0`}>Jan 2024 — Nov 2025</span>
+                  <time
+                    dateTime="2024-01/2025-11"
+                    className={`${TYPOGRAPHY.monoSmall} text-neutral-500 uppercase tracking-wider shrink-0`}
+                  >
+                    Jan 2024 — Nov 2025
+                  </time>
                 </div>
               </div>
             </section>

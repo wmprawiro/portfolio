@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { CircleChevronLeft, SquareArrowOutUpRight } from "lucide-react";
@@ -13,6 +14,27 @@ interface ProjectDetailPageProps {
   }>;
 }
 
+export async function generateMetadata({ params }: ProjectDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+  if (!project) return {};
+  const description = project.description.split("\n\n")[0];
+  return {
+    title: project.title,
+    description,
+    openGraph: {
+      title: project.title,
+      description,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description,
+    },
+  };
+}
+
 export default async function ProjectDetailPage({
   params,
 }: ProjectDetailPageProps) {
@@ -26,14 +48,14 @@ export default async function ProjectDetailPage({
   return (
     <div className="min-h-screen bg-black text-white">
       <SiteNavbar />
-      <main className="pt-[53px]">
+      <main id="main-content" className="pt-[53px]">
         <div className="max-w-[1152px] mx-auto">
           <div className="flex flex-col lg:flex-row h-[calc(100vh-53px)]">
             <div className="flex-1 w-full lg:max-w-[calc(100%-340px)]">
               <div className="p-6 lg:p-10 h-full flex items-center justify-center">
                 <ProjectDetailImage
                   src={project.image}
-                  alt={`${project.title} detail image`}
+                  alt={`${project.title} preview`}
                   title={project.title}
                 />
               </div>
@@ -44,9 +66,9 @@ export default async function ProjectDetailPage({
                 <Link
                   href="/"
                   className={`flex items-center gap-3 ${TYPOGRAPHY.monoSmall} text-neutral-500 hover:text-white transition-colors`}
-                  title="Go back to homepage"
+                  aria-label="Go back to homepage"
                 >
-                  <CircleChevronLeft className="w-3 h-3" />
+                  <CircleChevronLeft className="w-3 h-3" aria-hidden="true" />
                   <span>BACK</span>
                 </Link>
 
@@ -67,7 +89,7 @@ export default async function ProjectDetailPage({
                   <div
                     className={`space-y-4 text-neutral-400 ${TYPOGRAPHY.monoSmall} leading-relaxed`}
                   >
-                    {project.description.split('\n\n').map((paragraph, index) => (
+                    {project.description.split("\n\n").map((paragraph, index) => (
                       <p key={index}>{paragraph}</p>
                     ))}
 
@@ -82,14 +104,14 @@ export default async function ProjectDetailPage({
 
                     {project.images && project.images.length > 0 && (
                       <div className="mb-12">
-                        <h2 className={`${TYPOGRAPHY.monoSmall} text-neutral-500 uppercase tracking-wider mb-4`}>
-                          Visuals & Interface
-                        </h2>
+                        <h3 className={`${TYPOGRAPHY.monoSmall} text-neutral-500 uppercase tracking-wider mb-4`}>
+                          Visuals &amp; Interface
+                        </h3>
                         <div className="flex flex-col gap-6">
-                          {project.images.map((img, idx) => (
-                            <div key={idx} className="w-full bg-neutral-900/50 border border-neutral-800 aspect-video flex items-center justify-center p-8 text-center">
+                          {project.images.map((img) => (
+                            <div key={img} className="w-full bg-neutral-900/50 border border-neutral-800 aspect-video flex items-center justify-center p-8 text-center">
                               <span className="text-neutral-500 font-mono text-sm uppercase tracking-wider">
-                                [ Image Placeholder: {img} ]<br/>
+                                [ Image Placeholder: {img} ]<br />
                                 <span className="text-neutral-600 text-xs mt-2 block">Replace with actual &lt;img&gt; later</span>
                               </span>
                             </div>
@@ -103,13 +125,15 @@ export default async function ProjectDetailPage({
                         <h3 className={`${TYPOGRAPHY.smallHeading} text-white mb-2`}>
                           Goals
                         </h3>
-                        <ul className="list-disc pl-5 space-y-2 text-neutral-400">
-                          {project.goals.map((goal, idx) => (
-                            <li key={idx} className="leading-relaxed">{goal}</li>
+                        <ul className={`list-disc pl-5 space-y-2 text-neutral-400 ${TYPOGRAPHY.monoSmall}`}>
+                          {project.goals.map((goal) => (
+                            <li key={goal.slice(0, 40)} className="leading-relaxed">{goal}</li>
                           ))}
                         </ul>
                       </div>
-                    )}{project.impact && (
+                    )}
+
+                    {project.impact && (
                       <div className="pt-4">
                         <h3 className={`${TYPOGRAPHY.smallHeading} text-white mb-2`}>
                           THE IMPACT
@@ -123,9 +147,9 @@ export default async function ProjectDetailPage({
                         <h3 className={`${TYPOGRAPHY.smallHeading} text-white mb-2`}>
                           TECH STACK
                         </h3>
-                        <ul className={`space-y-1 ${TYPOGRAPHY.monoSmall}`}>
-                          {project.techStack.map((tech, index) => (
-                            <li key={index}>• {tech}</li>
+                        <ul className={`list-disc pl-5 space-y-1 text-neutral-400 ${TYPOGRAPHY.monoSmall}`}>
+                          {project.techStack.map((tech) => (
+                            <li key={tech}>{tech}</li>
                           ))}
                         </ul>
                       </div>
@@ -134,11 +158,11 @@ export default async function ProjectDetailPage({
                     {project.infrastructure && (
                       <div className="pt-4">
                         <h3 className={`${TYPOGRAPHY.smallHeading} text-white mb-2`}>
-                          INFRASTRUCTURE & DEVOPS
+                          INFRASTRUCTURE &amp; DEVOPS
                         </h3>
-                        <ul className={`space-y-1 ${TYPOGRAPHY.monoSmall}`}>
-                          {project.infrastructure.map((infra, index) => (
-                            <li key={index}>• {infra}</li>
+                        <ul className={`list-disc pl-5 space-y-1 text-neutral-400 ${TYPOGRAPHY.monoSmall}`}>
+                          {project.infrastructure.map((infra) => (
+                            <li key={infra}>{infra}</li>
                           ))}
                         </ul>
                       </div>
@@ -149,9 +173,9 @@ export default async function ProjectDetailPage({
                         <h3 className={`${TYPOGRAPHY.smallHeading} text-white mb-2`}>
                           THIRD-PARTY INTEGRATIONS
                         </h3>
-                        <ul className={`space-y-1 ${TYPOGRAPHY.monoSmall}`}>
-                          {project.integrations.map((integration, index) => (
-                            <li key={index}>• {integration}</li>
+                        <ul className={`list-disc pl-5 space-y-1 text-neutral-400 ${TYPOGRAPHY.monoSmall}`}>
+                          {project.integrations.map((integration) => (
+                            <li key={integration}>{integration}</li>
                           ))}
                         </ul>
                       </div>
@@ -166,9 +190,11 @@ export default async function ProjectDetailPage({
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label={`Visit ${project.title} live project (opens in new tab)`}
                           className="text-neutral-400 hover:text-white transition-colors underline underline-offset-4"
                         >
                           {project.liveUrl}
+                          <SquareArrowOutUpRight className="inline-block ml-1 w-3 h-3" aria-hidden="true" />
                         </a>
                       </div>
                     )}

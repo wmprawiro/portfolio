@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { CircleChevronLeft } from "lucide-react";
@@ -11,6 +12,27 @@ interface ArticlePageProps {
   }>;
 }
 
+export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const article = articles.find((a) => a.slug === slug);
+  if (!article) return {};
+  return {
+    title: article.title,
+    description: article.summary,
+    openGraph: {
+      title: article.title,
+      description: article.summary,
+      type: "article",
+      authors: ["Wahyu Maulana Prawiro"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.summary,
+    },
+  };
+}
+
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const { slug } = await params;
   const article = articles.find((a) => a.slug === slug);
@@ -22,14 +44,14 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   return (
     <div className="min-h-screen bg-black text-white">
       <SiteNavbar />
-      <main className="pt-[53px]">
+      <main id="main-content" className="pt-[53px]">
         <div className="max-w-[768px] mx-auto p-6 lg:p-10">
           <Link
             href="/"
             className={`inline-flex items-center gap-3 ${TYPOGRAPHY.monoSmall} text-neutral-500 hover:text-white transition-colors mb-12`}
-            title="Go back to homepage"
+            aria-label="Go back to homepage"
           >
-            <CircleChevronLeft className="w-3 h-3" />
+            <CircleChevronLeft className="w-3 h-3" aria-hidden="true" />
             <span>BACK</span>
           </Link>
 
@@ -38,12 +60,15 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               <h1 className={`${TYPOGRAPHY.heading} text-white mb-4`}>
                 {article.title}
               </h1>
-              <div className={`${TYPOGRAPHY.monoSmallMuted} text-neutral-500 uppercase tracking-wider`}>
+              <time
+                dateTime={article.isoDate}
+                className={`${TYPOGRAPHY.monoSmall} text-neutral-500 uppercase tracking-wider block`}
+              >
                 {article.date}
-              </div>
+              </time>
             </header>
 
-            <div 
+            <div
               className={`space-y-4 text-neutral-400 ${TYPOGRAPHY.monoSmall} leading-relaxed`}
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
