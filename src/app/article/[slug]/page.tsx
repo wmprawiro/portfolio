@@ -5,6 +5,7 @@ import { CircleChevronLeft } from "lucide-react";
 import { SiteNavbar } from "@/components/site-navbar";
 import { articles } from "@/lib/articles";
 import { TYPOGRAPHY } from "@/lib/design-system";
+import { ScrambleText } from "@/components/ui/scramble-text";
 
 interface ArticlePageProps {
   params: Promise<{
@@ -52,19 +53,19 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             aria-label="Go back to homepage"
           >
             <CircleChevronLeft className="w-3 h-3" aria-hidden="true" />
-            <span>BACK</span>
+            <span><ScrambleText text="BACK" /></span>
           </Link>
 
           <article>
             <header className="mb-12 border-b border-neutral-800/50 pb-8">
               <h1 className={`${TYPOGRAPHY.heading} text-white mb-4`}>
-                {article.title}
+                <ScrambleText text={article.title} />
               </h1>
               <time
                 dateTime={article.isoDate}
                 className={`${TYPOGRAPHY.monoSmall} text-neutral-500 uppercase tracking-wider block`}
               >
-                {article.date}
+                <ScrambleText text={article.date} />
               </time>
             </header>
 

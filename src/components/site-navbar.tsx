@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Download, Mail } from "lucide-react";
 import { TYPOGRAPHY } from "@/lib/design-system";
+import { ScrambleText } from "@/components/ui/scramble-text";
 
 export function SiteNavbar() {
   return (
@@ -14,7 +15,7 @@ export function SiteNavbar() {
           className="font-noto-sans-mono text-xl text-white hover:opacity-80 transition-opacity"
           aria-label="wmprawiro portfolio — home"
         >
-          wmprawiro
+          <ScrambleText text="wmprawiro" />
         </Link>
 
         <ul className="flex items-center gap-3 list-none m-0 p-0">
@@ -24,7 +25,7 @@ export function SiteNavbar() {
               aria-label="Download CV (PDF)"
               className={`flex items-center gap-2 ${TYPOGRAPHY.monoSmallMuted} hover:text-white transition-colors`}
             >
-              DOWNLOAD CV
+              <ScrambleText text="DOWNLOAD CV" />
               <Download className="w-3 h-3" aria-hidden="true" />
             </a>
           </li>
@@ -34,7 +35,7 @@ export function SiteNavbar() {
               aria-label="Send email to hi@wmprawiro.dev"
               className={`flex items-center gap-2 ${TYPOGRAPHY.monoSmallMuted} hover:text-white transition-colors`}
             >
-              EMAIL
+              <ScrambleText text="EMAIL" />
               <Mail className="w-3 h-3" aria-hidden="true" />
             </a>
           </li>

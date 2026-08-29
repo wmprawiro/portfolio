@@ -1,3 +1,5 @@
+import { ScrambleText } from "@/components/ui/scramble-text";
+
 interface ProjectTagProps {
   tag: "coding" | "design";
 }
@@ -10,7 +12,7 @@ export function ProjectTag({ tag }: ProjectTagProps) {
           tag === "coding" ? "bg-red-500" : "bg-violet-500"
         }`}
       />
-      <span>{tag.toUpperCase()}</span>
+      <span><ScrambleText text={tag.toUpperCase()} /></span>
     </div>
   );
 }

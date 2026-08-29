@@ -6,6 +6,7 @@ import { articles } from "@/lib/articles";
 import { TYPOGRAPHY } from "@/lib/design-system";
 import Link from "next/link";
 import { SquareArrowOutUpRight } from "lucide-react";
+import { ScrambleText } from "@/components/ui/scramble-text";
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
                 id="recent-heading"
                 className={`${TYPOGRAPHY.subheading} uppercase tracking-wider text-white mb-6`}
               >
-                Latest Project
+                <ScrambleText text="Latest Project" />
               </h2>
               <div className="flex flex-col gap-2">
                 {projects.map((project) => (
@@ -34,20 +35,20 @@ export default function Home() {
                 id="articles-heading"
                 className={`${TYPOGRAPHY.subheading} uppercase tracking-wider text-white mb-6`}
               >
-                Articles
+                <ScrambleText text="Articles" />
               </h2>
               <div className="flex flex-col gap-2">
                 {articles.map((article) => (
                   <div key={article.id} className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 pl-0 pr-0 group hover:bg-neutral-900/30 transition-colors">
                     <div className="flex flex-col gap-1">
                       <h3 className={`${TYPOGRAPHY.monoSmall} text-white uppercase tracking-wider group-hover:text-neutral-300 transition-colors`}>
-                        {article.title}
+                        <ScrambleText text={article.title} />
                       </h3>
                       <time
                         dateTime={article.isoDate}
                         className={`${TYPOGRAPHY.monoSmall} text-neutral-500`}
                       >
-                        {article.date}
+                        <ScrambleText text={article.date} />
                       </time>
                     </div>
 
@@ -57,7 +58,7 @@ export default function Home() {
                         aria-label={`Read article: ${article.title}`}
                         className={`flex items-center gap-2 ${TYPOGRAPHY.monoSmallMuted} hover:text-white transition-colors`}
                       >
-                        READ MORE
+                        <ScrambleText text="READ MORE" />
                         <SquareArrowOutUpRight className="w-3 h-3" aria-hidden="true" />
                       </Link>
                     </div>
@@ -71,13 +72,17 @@ export default function Home() {
                 id="experience-heading"
                 className={`${TYPOGRAPHY.subheading} uppercase tracking-wider text-white mb-6`}
               >
-                Experience
+                <ScrambleText text="Experience" />
               </h2>
               <div className="flex flex-col gap-8">
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-2">
                   <div>
-                    <h3 className={`${TYPOGRAPHY.monoSmall} text-white uppercase tracking-wider`}>Engineer On-Site</h3>
-                    <p className={`text-neutral-400 ${TYPOGRAPHY.monoSmallMuted} mt-1`}>PT Finnet Indonesia (Telkom Group)</p>
+                    <h3 className={`${TYPOGRAPHY.monoSmall} text-white uppercase tracking-wider`}>
+                      <ScrambleText text="Engineer On-Site" />
+                    </h3>
+                    <p className={`text-neutral-400 ${TYPOGRAPHY.monoSmallMuted} mt-1`}>
+                      PT Finnet Indonesia (Telkom Group)
+                    </p>
                   </div>
                   <time
                     dateTime="2025-11"
@@ -89,8 +94,12 @@ export default function Home() {
 
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-2">
                   <div>
-                    <h3 className={`${TYPOGRAPHY.monoSmall} text-white uppercase tracking-wider`}>Freelance Product Specialist</h3>
-                    <p className={`text-neutral-400 ${TYPOGRAPHY.monoSmallMuted} mt-1`}>PT Finnet Indonesia (Telkom Group)</p>
+                    <h3 className={`${TYPOGRAPHY.monoSmall} text-white uppercase tracking-wider`}>
+                      <ScrambleText text="Freelance Product Specialist" />
+                    </h3>
+                    <p className={`text-neutral-400 ${TYPOGRAPHY.monoSmallMuted} mt-1`}>
+                      PT Finnet Indonesia (Telkom Group)
+                    </p>
                   </div>
                   <time
                     dateTime="2024-01/2025-11"

@@ -3,6 +3,7 @@ import { SquareArrowOutUpRight } from "lucide-react";
 import { ProjectTags } from "@/components/project-tags";
 import { Project } from "@/lib/projects";
 import { TYPOGRAPHY, TRANSITIONS } from "@/lib/design-system";
+import { ScrambleText } from "@/components/ui/scramble-text";
 
 interface ProjectCardProps {
   project: Project;
@@ -17,7 +18,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <h3
           className={`${TYPOGRAPHY.monoSmall} uppercase tracking-wider text-white group-hover:text-neutral-300 transition-colors`}
         >
-          {project.title}
+          <ScrambleText text={project.title} />
         </h3>
       </div>
 
@@ -28,7 +29,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           aria-label={`View details for ${project.title}`}
           className={`flex items-center gap-2 ${TYPOGRAPHY.monoSmallMuted} hover:text-white transition-colors`}
         >
-          READ MORE
+          <ScrambleText text="READ MORE" />
           <SquareArrowOutUpRight className="w-3 h-3" aria-hidden="true" />
         </Link>
       </div>

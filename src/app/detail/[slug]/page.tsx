@@ -7,6 +7,7 @@ import { ProjectDetailImage } from "@/components/project-detail-image";
 import { ProjectTags } from "@/components/project-tags";
 import { projects } from "@/lib/projects";
 import { TYPOGRAPHY } from "@/lib/design-system";
+import { ScrambleText } from "@/components/ui/scramble-text";
 
 interface ProjectDetailPageProps {
   params: Promise<{
@@ -69,12 +70,12 @@ export default async function ProjectDetailPage({
                   aria-label="Go back to homepage"
                 >
                   <CircleChevronLeft className="w-3 h-3" aria-hidden="true" />
-                  <span>BACK</span>
+                  <span><ScrambleText text="BACK" /></span>
                 </Link>
 
                 <div className="space-y-4">
                   <h1 className={`${TYPOGRAPHY.heading} text-white`}>
-                    {project.title}
+                    <ScrambleText text={project.title} />
                   </h1>
 
                   <ProjectTags tags={project.tags} />
@@ -84,7 +85,7 @@ export default async function ProjectDetailPage({
                   <h2
                     className={`${TYPOGRAPHY.subheading} uppercase tracking-wider text-white`}
                   >
-                    Description
+                    <ScrambleText text="Description" />
                   </h2>
                   <div
                     className={`space-y-4 text-neutral-400 ${TYPOGRAPHY.monoSmall} leading-relaxed`}
@@ -96,7 +97,7 @@ export default async function ProjectDetailPage({
                     {project.problem && (
                       <div className="pt-4">
                         <h3 className={`${TYPOGRAPHY.smallHeading} text-white mb-2`}>
-                          THE PROBLEM
+                          <ScrambleText text="THE PROBLEM" />
                         </h3>
                         <p>{project.problem}</p>
                       </div>
@@ -105,7 +106,7 @@ export default async function ProjectDetailPage({
                     {project.images && project.images.length > 0 && (
                       <div className="mb-12">
                         <h3 className={`${TYPOGRAPHY.monoSmall} text-neutral-500 uppercase tracking-wider mb-4`}>
-                          Visuals &amp; Interface
+                          <ScrambleText text="Visuals & Interface" />
                         </h3>
                         <div className="flex flex-col gap-6">
                           {project.images.map((img) => (
@@ -123,7 +124,7 @@ export default async function ProjectDetailPage({
                     {project.goals && project.goals.length > 0 && (
                       <div className="pt-4">
                         <h3 className={`${TYPOGRAPHY.smallHeading} text-white mb-2`}>
-                          Goals
+                          <ScrambleText text="Goals" />
                         </h3>
                         <ul className={`list-disc pl-5 space-y-2 text-neutral-400 ${TYPOGRAPHY.monoSmall}`}>
                           {project.goals.map((goal) => (
@@ -136,7 +137,7 @@ export default async function ProjectDetailPage({
                     {project.impact && (
                       <div className="pt-4">
                         <h3 className={`${TYPOGRAPHY.smallHeading} text-white mb-2`}>
-                          THE IMPACT
+                          <ScrambleText text="THE IMPACT" />
                         </h3>
                         <p>{project.impact}</p>
                       </div>
@@ -145,7 +146,7 @@ export default async function ProjectDetailPage({
                     {project.techStack && (
                       <div className="pt-4">
                         <h3 className={`${TYPOGRAPHY.smallHeading} text-white mb-2`}>
-                          TECH STACK
+                          <ScrambleText text="TECH STACK" />
                         </h3>
                         <ul className={`list-disc pl-5 space-y-1 text-neutral-400 ${TYPOGRAPHY.monoSmall}`}>
                           {project.techStack.map((tech) => (
@@ -158,7 +159,7 @@ export default async function ProjectDetailPage({
                     {project.infrastructure && (
                       <div className="pt-4">
                         <h3 className={`${TYPOGRAPHY.smallHeading} text-white mb-2`}>
-                          INFRASTRUCTURE &amp; DEVOPS
+                          <ScrambleText text="INFRASTRUCTURE & DEVOPS" />
                         </h3>
                         <ul className={`list-disc pl-5 space-y-1 text-neutral-400 ${TYPOGRAPHY.monoSmall}`}>
                           {project.infrastructure.map((infra) => (
@@ -171,7 +172,7 @@ export default async function ProjectDetailPage({
                     {project.integrations && (
                       <div className="pt-4">
                         <h3 className={`${TYPOGRAPHY.smallHeading} text-white mb-2`}>
-                          THIRD-PARTY INTEGRATIONS
+                          <ScrambleText text="THIRD-PARTY INTEGRATIONS" />
                         </h3>
                         <ul className={`list-disc pl-5 space-y-1 text-neutral-400 ${TYPOGRAPHY.monoSmall}`}>
                           {project.integrations.map((integration) => (
@@ -184,7 +185,7 @@ export default async function ProjectDetailPage({
                     {project.liveUrl && (
                       <div className="pt-4 pb-20">
                         <h3 className={`${TYPOGRAPHY.smallHeading} text-white mb-2`}>
-                          VISIT PROJECT
+                          <ScrambleText text="VISIT PROJECT" />
                         </h3>
                         <a
                           href={project.liveUrl}

@@ -10,6 +10,7 @@ import {
   CopyCheck,
 } from "lucide-react";
 import { TYPOGRAPHY, TRANSITIONS } from "@/lib/design-system";
+import { ScrambleText } from "@/components/ui/scramble-text";
 
 function CopyEmail() {
   const [copied, setCopied] = useState(false);
@@ -18,7 +19,7 @@ function CopyEmail() {
       <span
         className={`${TYPOGRAPHY.monoSmall} text-neutral-500 leading-relaxed pr-2`}
       >
-        HI@WMPRAWIRO.DEV
+        <ScrambleText text="HI@WMPRAWIRO.DEV" />
       </span>
       <button
         type="button"
@@ -61,7 +62,7 @@ export function SidebarBio() {
       <div className="space-y-6">
         <div className="space-y-4">
           <h1 className={`${TYPOGRAPHY.heading} text-white`}>
-            Wahyu Maulana Prawiro
+            <ScrambleText text="Wahyu Maulana Prawiro" />
           </h1>
           <CopyEmail />
           <p className={`text-neutral-400 ${TYPOGRAPHY.body} leading-relaxed`}>
@@ -80,7 +81,7 @@ export function SidebarBio() {
               aria-label={`${link.label} (opens in new tab)`}
             >
               <link.icon className="w-3 h-3" aria-hidden="true" />
-              <span>{link.name}</span>
+              <span><ScrambleText text={link.name} /></span>
             </Link>
           ))}
         </div>
