@@ -15,13 +15,13 @@ export default function Home() {
       <main id="main-content" className="max-w-[1152px] mx-auto pt-[53px]">
         <div className="flex flex-col lg:flex-row h-[calc(100vh-53px)]">
           <SidebarBio />
-          <div className="flex-1 w-full lg:overflow-y-auto lg:h-full">
+          <div className="flex-1 w-full lg:border-r border-neutral-800 lg:overflow-y-auto lg:h-full">
             <section className="p-6 lg:p-10" aria-labelledby="recent-heading">
               <h2
                 id="recent-heading"
                 className={`${TYPOGRAPHY.subheading} uppercase tracking-wider text-white mb-6`}
               >
-                <ScrambleText text="Latest Project" />
+                <ScrambleText text="Latest Projects" />
               </h2>
               <div className="flex flex-col gap-2">
                 {projects.map((project) => (
@@ -78,7 +78,7 @@ export default function Home() {
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-2">
                   <div>
                     <h3 className={`${TYPOGRAPHY.monoSmall} text-white uppercase tracking-wider`}>
-                      <ScrambleText text="Engineer On-Site" />
+                      <ScrambleText text="On-Site Engineer" />
                     </h3>
                     <p className={`text-neutral-400 ${TYPOGRAPHY.monoSmallMuted} mt-1`}>
                       PT Finnet Indonesia (Telkom Group)

@@ -56,7 +56,7 @@ const socialLinks = [
 export function SidebarBio() {
   return (
     <aside
-      className="lg:sticky lg:top-0 lg:h-full w-full lg:max-w-[340px] p-6 lg:p-10 border-b lg:border-b-0 lg:border-r border-neutral-800 lg:overflow-y-auto"
+      className="lg:sticky lg:top-0 lg:h-full w-full lg:max-w-[340px] p-6 lg:p-10 border-b lg:border-b-0 lg:border-l lg:border-r border-neutral-800 lg:overflow-y-auto"
       aria-label="About and social links"
     >
       <div className="space-y-6">

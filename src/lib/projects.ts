@@ -9,7 +9,6 @@ export interface Project {
   problem?: string;
   impact?: string;
   techStack?: string[];
-  infrastructure?: string[];
   integrations?: string[];
   goals?: string[];
   liveUrl?: string;
@@ -30,8 +29,7 @@ export const projects: Project[] = [
       "Gamers in Indonesia often faced slow, manual, or unreliable top-up processes, leading to high transaction abandonment rates. The system needed a robust architecture to handle concurrent transactions without manual bottlenecks.",
     impact:
       "Delivered a highly reliable digital goods ecosystem with zero manual intervention, resulting in significantly faster checkout times and the capability to securely process high-volume, concurrent micro-transactions at scale.",
-    techStack: ["Next.js / React", "TypeScript", "Tailwind CSS", "PostgreSQL"],
-    infrastructure: ["Docker", "Nginx (Reverse Proxy)", "Cloudflare"],
+    techStack: ["Next.js / React", "TypeScript", "Tailwind CSS", "PostgreSQL", "Docker", "Nginx (Reverse Proxy)", "Cloudflare"],
     integrations: [
       "Digiflazz API (Digital Product Fulfillment)",
       "Duitku API (Automated Payment Gateway)",

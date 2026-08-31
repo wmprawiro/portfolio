@@ -52,7 +52,7 @@ export default async function ProjectDetailPage({
       <main id="main-content" className="pt-[53px]">
         <div className="max-w-[1152px] mx-auto">
           <div className="flex flex-col lg:flex-row h-[calc(100vh-53px)]">
-            <div className="flex-1 w-full lg:max-w-[calc(100%-340px)]">
+            <div className="flex-1 w-full lg:max-w-[calc(100%-340px)] lg:border-l border-neutral-800">
               <div className="p-6 lg:p-10 h-full flex items-center justify-center">
                 <ProjectDetailImage
                   src={project.image}
@@ -62,7 +62,7 @@ export default async function ProjectDetailPage({
               </div>
             </div>
 
-            <aside className="w-full lg:max-w-[340px] border-t lg:border-t-0 lg:border-l border-neutral-800 lg:overflow-y-auto lg:h-full">
+            <aside className="w-full lg:max-w-[340px] border-t lg:border-t-0 lg:border-l lg:border-r border-neutral-800 lg:overflow-y-auto lg:h-full">
               <div className="p-6 lg:p-10 space-y-6">
                 <Link
                   href="/"
@@ -85,7 +85,7 @@ export default async function ProjectDetailPage({
                   <h2
                     className={`${TYPOGRAPHY.subheading} uppercase tracking-wider text-white`}
                   >
-                    <ScrambleText text="Description" />
+                    <ScrambleText text="DESCRIPTION" />
                   </h2>
                   <div
                     className={`space-y-4 text-neutral-400 ${TYPOGRAPHY.monoSmall} leading-relaxed`}
@@ -106,7 +106,7 @@ export default async function ProjectDetailPage({
                     {project.images && project.images.length > 0 && (
                       <div className="mb-12">
                         <h3 className={`${TYPOGRAPHY.monoSmall} text-neutral-500 uppercase tracking-wider mb-4`}>
-                          <ScrambleText text="Visuals & Interface" />
+                          <ScrambleText text="VISUALS & INTERFACE" />
                         </h3>
                         <div className="flex flex-col gap-6">
                           {project.images.map((img) => (
@@ -124,7 +124,7 @@ export default async function ProjectDetailPage({
                     {project.goals && project.goals.length > 0 && (
                       <div className="pt-4">
                         <h3 className={`${TYPOGRAPHY.smallHeading} text-white mb-2`}>
-                          <ScrambleText text="Goals" />
+                          <ScrambleText text="GOALS" />
                         </h3>
                         <ul className={`list-disc pl-5 space-y-2 text-neutral-400 ${TYPOGRAPHY.monoSmall}`}>
                           {project.goals.map((goal) => (
@@ -151,19 +151,6 @@ export default async function ProjectDetailPage({
                         <ul className={`list-disc pl-5 space-y-1 text-neutral-400 ${TYPOGRAPHY.monoSmall}`}>
                           {project.techStack.map((tech) => (
                             <li key={tech}>{tech}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {project.infrastructure && (
-                      <div className="pt-4">
-                        <h3 className={`${TYPOGRAPHY.smallHeading} text-white mb-2`}>
-                          <ScrambleText text="INFRASTRUCTURE & DEVOPS" />
-                        </h3>
-                        <ul className={`list-disc pl-5 space-y-1 text-neutral-400 ${TYPOGRAPHY.monoSmall}`}>
-                          {project.infrastructure.map((infra) => (
-                            <li key={infra}>{infra}</li>
                           ))}
                         </ul>
                       </div>

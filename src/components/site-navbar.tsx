@@ -9,7 +9,7 @@ export function SiteNavbar() {
       className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-neutral-800"
       aria-label="Main navigation"
     >
-      <div className="flex items-center justify-between py-3 px-6 lg:px-10 max-w-[1152px] mx-auto w-full">
+      <div className="flex items-center justify-between py-3 px-6 lg:px-10 max-w-[1152px] mx-auto w-full lg:border-l lg:border-r border-neutral-800">
         <Link
           href="/"
           className="font-noto-sans-mono text-xl text-white hover:opacity-80 transition-opacity"

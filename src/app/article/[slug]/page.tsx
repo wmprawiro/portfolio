@@ -46,8 +46,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     <div className="min-h-screen bg-black text-white">
       <SiteNavbar />
       <main id="main-content" className="pt-[53px]">
-        <div className="max-w-[768px] mx-auto p-6 lg:p-10">
-          <Link
+        <div className="max-w-[1152px] mx-auto lg:border-l lg:border-r border-neutral-800 min-h-[calc(100vh-53px)]">
+          <div className="max-w-[768px] mx-auto p-6 lg:p-10">
+            <Link
             href="/"
             className={`inline-flex items-center gap-3 ${TYPOGRAPHY.monoSmall} text-neutral-500 hover:text-white transition-colors mb-12`}
             aria-label="Go back to homepage"
@@ -74,6 +75,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
           </article>
+          </div>
         </div>
       </main>
     </div>
