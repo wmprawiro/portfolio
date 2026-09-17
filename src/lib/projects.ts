@@ -80,5 +80,31 @@ export const projects: Project[] = [
       "Design an intuitive interface for configuring transaction fees to keep the database sterile and secure.",
       "Bridge the communication gap between Product Managers, stakeholders, and the engineering team."
     ]
+  },
+  {
+    id: "4",
+    title: "Acomo",
+    slug: "acomo",
+    tags: ["coding", "design"],
+    image: "/acomo.png",
+    link: "/detail/acomo",
+    description:
+      "A modern financial tracking Progressive Web App (PWA) built to deliver seamless expense tracking, income management, and visual financial analytics.\n\nEngineered with Next.js and Supabase, the application emphasizes fast responsiveness, secure data persistence, and high mobile usability. Deployed on Tencent EdgeOne Makers, it leverages Edge CDN distribution and automatic SSL, ensuring instantaneous load times and smooth continuous deployment with every git push.",
+    problem:
+      "Managing personal finances often involves clunky interfaces, slow loading times, and lack of cross-device convenience. Traditional financial apps can feel overwhelming and complicated, leading to poor habit retention.",
+    impact:
+      "Delivered a lightweight, secure financial tracking PWA with real-time analytics and instant page loads, deployed with zero DevOps friction on Tencent EdgeOne Makers with global edge acceleration.",
+    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "Recharts", "Phosphor Icons"],
+    integrations: [
+      "Supabase (Auth & Database)",
+      "Tencent EdgeOne Makers (Edge CDN & Serverless Hosting)",
+    ],
+    goals: [
+      "Build a secure, lightning-fast financial tracking Progressive Web App (PWA).",
+      "Provide intuitive financial data visualization through interactive analytics.",
+      "Achieve zero-friction continuous deployment and sub-second page loads using Tencent EdgeOne Makers."
+    ],
+    liveUrl: "https://acomo.edgeone.dev"
   }
 ];
+

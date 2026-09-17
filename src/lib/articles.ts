@@ -109,5 +109,64 @@ export const articles: Article[] = [
 
 <p class="mt-8 pt-8 border-t border-neutral-900">9Router is one of those tools that changes how you think about AI tool costs. Instead of worrying about which subscription to use or rationing your Claude quota for important tasks, you just code. The router handles everything. For a tool that is completely free and open-source, the value it delivers is remarkable. You can find it at <a href="https://9router.com" target="_blank" rel="noopener noreferrer" class="text-neutral-300 underline underline-offset-4 hover:text-white transition-colors">9router.com</a>.</p>
     `
+  },
+  {
+    id: "3",
+    title: "It Works on My Machine",
+    slug: "it-works-on-my-machine",
+    date: "September 16, 2026",
+    isoDate: "2026-09-16",
+    summary: "If you are a web developer, you know the feeling. You’ve just finished building a project, and it runs flawlessly on localhost. But then comes the final boss: Deployment.",
+    content: `
+<p>If you are a web developer, you know the feeling. You’ve just finished building a project, and it runs flawlessly on <code>localhost</code>. But then comes the final boss: Deployment.</p>
+<p>In the past, deploying a website was a developer's nightmare. You had to rent a remote server, wrestle with Linux command lines, configure web servers, and manually set up SSL certificates just to get a secure connection. For beginners, it was a frustrating process that could easily take hours.</p>
+<p>Thankfully, the tech landscape has evolved. Today, modern platforms do the heavy lifting for us, and one of the absolute best tools you can use right now is Tencent EdgeOne Makers. If you want a platform that completely eliminates deployment headaches, you’re in the right place. Let me share my personal experience and show you how I brought my latest project to life.</p>
+
+<h3 class="text-white mt-8 mb-2 uppercase tracking-wider">What is Tencent EdgeOne Makers?</h3>
+<p>Tencent EdgeOne Makers is a powerful, all-in-one platform designed to help developers build, deploy, and scale applications in record time. It doesn't just host your code; it utilizes a lightning-fast Content Delivery Network (CDN) to ensure your website loads instantly, no matter where your users are.</p>
+<p>On top of that, enterprise-grade security is built right in. You get a free, out-of-the-box secure connection (HTTPS) without having to manually buy or renew security certificates.</p>
+
+<blockquote class="border-l-2 border-neutral-700 pl-4 my-4 italic text-neutral-300">
+  Bonus: If you join the DevHandal 2026 Batch 2 program and explore this platform, you can get 5 million LLM API tokens for FREE. This is a massive head start if you are planning to integrate AI into your future projects! <a href="https://devhandal2026.codepolitan.com/" target="_blank" rel="noopener noreferrer" class="text-neutral-300 underline underline-offset-4 hover:text-white transition-colors">https://devhandal2026.codepolitan.com/</a>
+</blockquote>
+
+<h3 class="text-white mt-8 mb-2 uppercase tracking-wider">My Personal Experience: From Ugame to Acomo</h3>
+<p>I am no stranger to the Tencent ecosystem. Previously, I deployed a gaming platform called Ugame using a Tencent Virtual Private Server (VPS). You can check out its blazing-fast performance right now at <a href="https://ugame.id" target="_blank" rel="noopener noreferrer" class="text-neutral-300 underline underline-offset-4 hover:text-white transition-colors">ugame.id</a>.</p>
+<p>Because I had such a reliable experience with their VPS, I was eager to try Tencent EdgeOne Makers for my newest project: Acomo.</p>
+
+<figure class="my-6 border border-neutral-800 rounded overflow-hidden">
+  <img src="/articles/acomo-preview.png" alt="Acomo financial tracking Progressive Web App" class="w-full object-cover" />
+  <figcaption class="p-2 text-center text-xs text-neutral-500 bg-neutral-900/50 border-t border-neutral-800">
+    <a href="https://acomo.edgeone.dev/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">https://acomo.edgeone.dev/</a>
+  </figcaption>
+</figure>
+
+<p>Acomo is a financial tracking Progressive Web App (PWA) built with Next.js and Supabase. Since it's a PWA, speed and security are non-negotiable. Deploying Acomo on EdgeOne Makers was an absolute breeze. The platform automatically detected my Next.js framework, configured the build commands, and within minutes, my app was live with a secure connection at <a href="https://acomo.edgeone.dev" target="_blank" rel="noopener noreferrer" class="text-neutral-300 underline underline-offset-4 hover:text-white transition-colors">acomo.edgeone.dev</a>. Now, whenever I squash a bug or add a new feature, a simple git push is all it takes to update the live app.</p>
+
+<p class="font-semibold text-white mt-6 mb-2">How to Deploy Your Site in 4 Simple Steps:</p>
+<p>You don't need any DevOps experience to do this. Here is how easy it is:</p>
+<ul class="list-disc pl-5 mt-2 space-y-2 mb-4">
+  <li><strong>Push to GitHub:</strong> Make sure your web app is ready locally, create a GitHub repository, and push your code.</li>
+  <li><strong>Create an Account:</strong> Go to the Tencent EdgeOne Makers dashboard and click on &quot;Deploy a new site.&quot;</li>
+  <li><strong>Connect to GitHub:</strong> Authorize the platform to read your GitHub repositories (you only do this once).</li>
+</ul>
+
+<figure class="my-6 border border-neutral-800 rounded overflow-hidden">
+  <img src="/articles/tencent-edgeone.png" alt="Tencent EdgeOne dashboard" class="w-full object-cover" />
+  <figcaption class="p-2 text-center text-xs text-neutral-500 bg-neutral-900/50 border-t border-neutral-800">
+    <a href="https://www.tencentcloud.com/products/teo" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">https://www.tencentcloud.com/products/teo</a>
+  </figcaption>
+</figure>
+
+<ul class="list-disc pl-5 mt-2 space-y-2 mb-4">
+  <li><strong>Deploy:</strong> Select your repository from the list. The platform will auto-detect your framework (like Next.js, React, or Vue). Click deploy, sit back, and get your live public URL in minutes!</li>
+</ul>
+
+<h3 class="text-white mt-8 mb-2 uppercase tracking-wider">Conclusion</h3>
+<p>Whether you need a robust VPS for complex systems like <a href="https://ugame.id" target="_blank" rel="noopener noreferrer" class="text-neutral-300 underline underline-offset-4 hover:text-white transition-colors">ugame.id</a>, or a rapid, automated deployment platform for modern web apps like <a href="https://acomo.edgeone.dev" target="_blank" rel="noopener noreferrer" class="text-neutral-300 underline underline-offset-4 hover:text-white transition-colors">acomo.edgeone.dev</a>, Tencent has the right tools for you. It saves time, eliminates server headaches, and lets you focus on what you do best: coding.</p>
+
+<p class="mt-8 pt-8 border-t border-neutral-900">Don't forget to try it out yourself and join the DevHandal 2026 Batch 2 program!</p>
+    `
   }
 ];
+
