@@ -1,17 +1,3 @@
-// Common Layout Constants
-export const LAYOUT_CONSTRAINTS = {
-  maxWidth: "mx-auto max-w-[1152px]",
-  sidebarWidth: "lg:max-w-[340px]",
-  mainContentWidth: "lg:max-w-[calc(100%-340px)]",
-} as const;
-
-// Common Spacing
-export const SPACING = {
-  containerPadding: "p-6 lg:p-8",
-  sidebarPadding: "p-6 lg:pl-14",
-  sidebarPaddingRight: "p-6 lg:pr-14",
-} as const;
-
 // Common Typography
 export const TYPOGRAPHY = {
   heading: "font-helvetica text-3xl text-white",
@@ -28,12 +14,4 @@ export const TRANSITIONS = {
   colors: "transition-colors",
   colorsGroup: "transition-colors group",
   transform: "transition-transform duration-300",
-} as const;
-
-// Image Heights
-export const IMAGE_HEIGHTS = {
-  card: "h-[356px]",
-  cardDesktop: "lg:h-[356px]",
-  detailMobile: "h-[356px]",
-  detailDesktop: "lg:h-[712px]",
 } as const;

@@ -103,24 +103,6 @@ export default async function ProjectDetailPage({
                       </div>
                     )}
 
-                    {project.images && project.images.length > 0 && (
-                      <div className="mb-12">
-                        <h3 className={`${TYPOGRAPHY.monoSmall} text-neutral-500 uppercase tracking-wider mb-4`}>
-                          <ScrambleText text="VISUALS & INTERFACE" />
-                        </h3>
-                        <div className="flex flex-col gap-6">
-                          {project.images.map((img) => (
-                            <div key={img} className="w-full bg-neutral-900/50 border border-neutral-800 aspect-video flex items-center justify-center p-8 text-center">
-                              <span className="text-neutral-500 font-mono text-sm uppercase tracking-wider">
-                                [ Image Placeholder: {img} ]<br />
-                                <span className="text-neutral-600 text-xs mt-2 block">Replace with actual &lt;img&gt; later</span>
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
                     {project.goals && project.goals.length > 0 && (
                       <div className="pt-4">
                         <h3 className={`${TYPOGRAPHY.smallHeading} text-white mb-2`}>

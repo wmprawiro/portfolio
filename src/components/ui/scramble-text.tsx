@@ -19,10 +19,10 @@ export function ScrambleText({ text, className = "" }: ScrambleTextProps) {
 
     // Kecepatan seimbang: teks pendek tetap punya durasi animasi yang asik,
     // tapi teks panjang dilimit maksimal sekitar 1.5 detik
-    const step = Math.max(0.5, text.length / 50); 
+    const step = Math.max(0.5, text.length / 50);
 
     intervalRef.current = setInterval(() => {
-      setDisplayText((current) =>
+      setDisplayText(() =>
         text
           .split("")
           .map((letter, index) => {
@@ -39,12 +39,11 @@ export function ScrambleText({ text, className = "" }: ScrambleTextProps) {
         if (intervalRef.current) clearInterval(intervalRef.current);
         setDisplayText(text);
       }
-      
+
       iteration += step;
     }, 30); // Kembali ke 30ms agar gerakannya tetap terbaca
   }, [text]);
 
-  // Run once on mount
   useEffect(() => {
     scramble();
     return () => {
