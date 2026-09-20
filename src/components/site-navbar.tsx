@@ -21,7 +21,8 @@ export function SiteNavbar() {
         <ul className="flex items-center gap-3 list-none m-0 p-0">
           <li>
             <a
-              href="https://drive.google.com/uc?export=download&id=185o53S7EJhPnmel0CO8VhUd51ICvqAg-"
+              href="/cv/Wahyu_Maulana_Prawiro_Engineer_On-Site_Profile.pdf"
+              download
               aria-label="Download CV (PDF)"
               className={`flex items-center gap-2 ${TYPOGRAPHY.monoSmallMuted} hover:text-white transition-colors`}
             >
@@ -31,8 +32,8 @@ export function SiteNavbar() {
           </li>
           <li>
             <a
-              href="mailto:hi@wmprawiro.dev"
-              aria-label="Send email to hi@wmprawiro.dev"
+              href="mailto:work@wmprawiro.dev"
+              aria-label="Send email to work@wmprawiro.dev"
               className={`flex items-center gap-2 ${TYPOGRAPHY.monoSmallMuted} hover:text-white transition-colors`}
             >
               <ScrambleText text="EMAIL" />

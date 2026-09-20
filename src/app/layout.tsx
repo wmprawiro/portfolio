@@ -13,13 +13,13 @@ const notoSansMono = Noto_Sans_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://wmprawiro.dev"),
   title: {
-    default: "wmprawiro — Product Designer",
+    default: "wmprawiro — Product Engineer",
     template: "%s | wmprawiro",
   },
   description:
-    "Portfolio of Wahyu Maulana Prawiro, a Product Designer with strong experience in building complex Fintech ecosystems.",
+    "Portfolio of Wahyu Maulana Prawiro, a Product Engineer with strong experience in building complex Fintech ecosystems.",
   keywords: [
-    "Product Designer",
+    "Product Engineer",
     "UI/UX",
     "Fintech",
     "Design System",
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "wmprawiro — Product Designer",
+    title: "wmprawiro — Product Engineer",
     description:
-      "Portfolio of Wahyu Maulana Prawiro, a Product Designer with strong experience in building complex Fintech ecosystems.",
+      "Portfolio of Wahyu Maulana Prawiro, a Product Engineer with strong experience in building complex Fintech ecosystems.",
     type: "website",
     locale: "en_US",
     url: "/",
@@ -51,15 +51,15 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "wmprawiro — Product Designer Portfolio",
+        alt: "wmprawiro — Product Engineer Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "wmprawiro — Product Designer",
+    title: "wmprawiro — Product Engineer",
     description:
-      "Portfolio of Wahyu Maulana Prawiro, a Product Designer with strong experience in building complex Fintech ecosystems.",
+      "Portfolio of Wahyu Maulana Prawiro, a Product Engineer with strong experience in building complex Fintech ecosystems.",
     creator: "@wmprawiro",
     images: ["/opengraph-image"],
   },
@@ -90,10 +90,10 @@ export default function RootLayout({
               "@type": "Person",
               name: "Wahyu Maulana Prawiro",
               url: "https://wmprawiro.dev",
-              jobTitle: "Product Designer",
-              email: "hi@wmprawiro.dev",
+              jobTitle: "Product Engineer",
+              email: "work@wmprawiro.dev",
               description:
-                "Product Designer specializing in system analysis, end-to-end SDLC, and scalable architectures with strong experience in the fintech sector.",
+                "Product Engineer specializing in system analysis, end-to-end SDLC, and scalable architectures with strong experience in the fintech sector.",
               sameAs: [
                 "https://twitter.com/wmprawiro",
                 "https://linkedin.com/in/wmprawiro",

@@ -19,13 +19,13 @@ function CopyEmail() {
       <span
         className={`${TYPOGRAPHY.monoSmall} text-neutral-500 leading-relaxed pr-2`}
       >
-        <ScrambleText text="HI@WMPRAWIRO.DEV" />
+        <ScrambleText text="WORK@WMPRAWIRO.DEV" />
       </span>
       <button
         type="button"
         className="bg-transparent border-none p-0 cursor-pointer text-neutral-500 hover:text-white transition-colors"
         onClick={() => {
-          navigator.clipboard.writeText("hi@wmprawiro.dev");
+          navigator.clipboard.writeText("work@wmprawiro.dev");
           setCopied(true);
           setTimeout(() => setCopied(false), 1500);
         }}
@@ -66,7 +66,7 @@ export function SidebarBio() {
           </h1>
           <CopyEmail />
           <p className={`text-neutral-400 ${TYPOGRAPHY.body} leading-relaxed`}>
-            Product Designer specializing in system analysis, end-to-end SDLC, and scalable architectures. I translate complex business needs into high-quality user experiences, with strong experience in the fintech sector.
+            Product Engineer specializing in system analysis, end-to-end SDLC, and scalable architectures. I translate complex business needs into well-architected systems, with strong experience in the fintech sector.
           </p>
         </div>
 
